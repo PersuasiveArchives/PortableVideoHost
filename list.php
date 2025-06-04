@@ -4,6 +4,9 @@ include 'templates/header.php';
 $dataFile = __DIR__ . '/data/videos.json';
 $videos = json_decode(file_get_contents($dataFile), true) ?? [];
 
+$videos = array_reverse($videos);
+
+
 echo "<h2>All Videos</h2>";
 
 if (empty($videos)) {
@@ -26,3 +29,4 @@ if (empty($videos)) {
 }
 
 include 'templates/footer.php';
+?>
