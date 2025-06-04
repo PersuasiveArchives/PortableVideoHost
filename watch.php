@@ -100,7 +100,7 @@ if (!empty($commentLines)) {
     echo "<ul style='list-style:none;padding-left:0;'>";
     foreach ($commentLines as $line) {
         list($timestamp, $commentText) = explode(" | ", $line, 2);
-        echo "<li style='margin-bottom:10px;padding:10px;background:#fff;border-radius:4px;'>
+        echo "<li style='margin-bottom:10px;padding:10px;background:#000;border-radius:4px;'>
                 <div style='font-size:12px;color:gray;margin-bottom:4px;'>  " . htmlspecialchars($timestamp) . "</div>
                 <div style='font-size:16px;'>" . htmlspecialchars($commentText) . "</div>
               </li>";
