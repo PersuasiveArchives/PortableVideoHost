@@ -1,21 +1,75 @@
+/*
+
+Look at tis css so fancy just like discord.
+every time it “flexes,” all the kids start “padding” it on the back! 
+
+*/
+
+:root {
+    --theme-bg-primary: #36393f;
+    --theme-bg-secondary: #2f3136;
+    --theme-bg-tertiary: #202225;
+    --theme-text-primary: #dcddde;
+    --theme-text-secondary: #99aab5;
+    --theme-blurple: #5865F2;
+    --theme-blurple-hover: #4752C4;
+    --theme-red: #ED4245;
+    --theme-shadow-dark: rgba(0, 0, 0, 0.4);
+    --theme-shadow-light: rgba(0, 0, 0, 0.2);
+    --border-radius-lg: 8px;
+    --border-radius-md: 5px;
+    --border-radius-sm: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme-bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-text-secondary);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--theme-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-blurple);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--theme-bg-primary);
+    color: var(--theme-text-primary);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #202020;
-    color: white;
+    background-color: var(--theme-bg-tertiary);
+    color: #ffffff;
     padding: 15px 30px;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--theme-bg-secondary);
+    box-shadow: 0 2px 5px var(--theme-shadow-dark);
 }
 
 header a {
-    color: red;
+    color: var(--theme-blurple);
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+header a:hover {
+    color: var(--theme-blurple-hover);
+    text-decoration: underline;
 }
 
 main {
@@ -24,7 +78,12 @@ main {
 
 h2 {
     margin-top: 0;
-    color: #202020;
+    color: var(--theme-text-primary);
+    border-bottom: 1px solid var(--theme-bg-secondary);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 ul {
@@ -38,49 +97,96 @@ li {
 
 a.video-link {
     font-size: 18px;
-    color: #065fd4;
+    color: var(--theme-blurple);
     text-decoration: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    padding: 4px 6px;
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
 }
 
 a.video-link:hover {
-    text-decoration: underline;
+    color: var(--theme-blurple-hover);
+    background-color: rgba(var(--theme-blurple-hover), 0.1);
+    text-decoration: none;
+    transform: translateY(-1px);
 }
 
 form {
     margin-top: 30px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    max-width: 500px;
+    background: var(--theme-bg-secondary);
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 10px var(--theme-shadow-dark);
+    max-width: 550px;
+    color: var(--theme-text-primary);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-input[type="text"], input[type="file"] {
-    width: 100%;
-    padding: 10px;
+form:hover {
+    box-shadow: 0 6px 15px var(--theme-shadow-dark);
+}
+
+input[type="text"],
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
     margin-top: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: var(--theme-bg-primary);
+    border: 1px solid var(--theme-bg-primary);
+    border-radius: var(--border-radius-md);
+    color: var(--theme-text-primary);
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    background-color: var(--theme-bg-tertiary);
+    border-color: var(--theme-blurple);
+    box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.5);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--theme-text-secondary);
 }
 
 button {
-    padding: 10px 15px;
-    background-color: red;
+    padding: 12px 20px;
+    background-color: var(--theme-blurple);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius-md);
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 2px 4px var(--theme-shadow-light);
 }
 
 button:hover {
-    background-color: #cc0000;
+    background-color: var(--theme-blurple-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px var(--theme-shadow-dark);
+}
+
+button:active {
+    background-color: var(--theme-blurple-hover);
+    transform: translateY(0);
+    box-shadow: 0 1px 2px var(--theme-shadow-light);
 }
 
 .video-player {
-    background-color: black;
+    background-color: var(--theme-bg-tertiary);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
     max-width: 720px;
+    box-shadow: 0 6px 15px var(--theme-shadow-dark);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.video-player:hover {
+    box-shadow: 0 8px 20px var(--theme-shadow-dark);
 }
