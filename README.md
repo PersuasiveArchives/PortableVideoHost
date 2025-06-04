@@ -7,3 +7,6 @@ If you're using XAMPP, clone this github repository and place them to htdocs.
 
 WAMP:
 If you're using WAMP, clone this github repository and place them to "www"
+
+License:
+Feel free to choose MIT or GPL v3
