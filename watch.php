@@ -63,11 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_comment'])) {
 echo "<h2>" . htmlspecialchars($video['title']) . "</h2>";
 
 echo "<div class='video-player' style='margin-bottom:20px;'>
-        <video width='100%' controls>
+        <video width='100%' controls controlsList=\"nodownload\" oncontextmenu=\"return false;\">
             <source src='videos/{$filename}' type='{$mime}'>
             Your browser does not support the video tag.
         </video>
       </div>";
+
 
 
 echo "<form method='post' style='margin:15px 0;'>
